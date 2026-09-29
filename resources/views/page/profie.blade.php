@@ -1,4 +1,4 @@
-@extend('layout.app')
+@extend('layouts.app')
 
 @section('title', 'Profile')
 
