@@ -7,7 +7,7 @@
         <div class="col-md-12">
             <h2>Selamat Datang</h2>
             <p>Website profile mahasiswa Universitas Pamulang</p>
-            <a href="{{ url('/mahas1swa') }}" class="btn btn-success">
+            <a href="{{ url('/mahasiswa') }}" class="btn btn-success">
                 Lihat Profile
             </a>
         </div>
