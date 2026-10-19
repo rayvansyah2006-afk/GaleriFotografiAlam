@@ -18,4 +18,8 @@ Route::get('/kontak', function () {
     return view('page.kontak');
 })->name('kontak');
 
-Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
+Route::prefix('admin')->nama('admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.home');
+    })->name('home');
+});
