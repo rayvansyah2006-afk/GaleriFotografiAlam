@@ -1,0 +1,192 @@
+/* HERO KONTAK */
+
+.contact-hero {
+    padding: 65px 0;
+    background: #e8e9dc;
+    text-align: center;
+}
+
+.contact-label {
+    color: #71835e;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.contact-hero h1 {
+    margin: 16px 0;
+    color: #263e30;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 48px);
+    font-weight: 600;
+}
+
+.contact-hero p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: #687067;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* =========================
+   BAGIAN KONTAK
+========================= */
+
+.contact-section {
+    padding: 75px 0;
+    background: #f7f5ef;
+}
+
+.contact-card {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 45px;
+    background: #fffdf8;
+    border: 1px solid #e4e3d7;
+    border-top: 3px solid #a9a477;
+    box-shadow: 0 12px 35px rgba(38, 62, 48, 0.05);
+}
+
+.contact-heading {
+    text-align: center;
+}
+
+.contact-heading h2 {
+    margin: 15px 0;
+    color: #263e30;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(27px, 3vw, 36px);
+    font-weight: 600;
+}
+
+.contact-heading p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #687067;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.contact-divider {
+    width: 60px;
+    height: 2px;
+    margin: 30px auto;
+    background: #a9a477;
+}
+
+/* =========================
+   ITEM INFORMASI
+========================= */
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    padding: 25px 0;
+    border-bottom: 1px solid #e8e6dc;
+}
+
+.contact-item:last-of-type {
+    border-bottom: none;
+}
+
+.contact-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: #e8e9dc;
+    color: #263e30;
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    transition: background 0.25s ease,
+                color 0.25s ease;
+}
+
+.contact-item:hover .contact-icon {
+    background: #263e30;
+    color: #fffdf5;
+}
+
+.contact-item h3 {
+    margin: 2px 0 8px;
+    color: #263e30;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contact-item p {
+    margin: 0;
+    color: #687067;
+    font-size: 14px;
+    line-height: 1.9;
+}
+.contact-text {
+    font-size: 15px;
+    color: #244334;
+    margin-top: 10px;
+    margin-bottom: 0;
+    letter-spacing: 0.3px;
+}
+
+/* =========================
+   CATATAN PENUTUP
+========================= */
+
+.contact-note {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f1f0e7;
+    border-left: 3px solid #a9a477;
+    color: #687067;
+    font-size: 13px;
+    line-height: 1.9;
+    text-align: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    .contact-hero {
+        padding: 50px 0;
+    }
+
+    .contact-section {
+        padding: 45px 0;
+    }
+
+    .contact-card {
+        padding: 30px 22px;
+    }
+
+    .contact-item {
+        gap: 15px;
+        padding: 22px 0;
+    }
+
+    .contact-item h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card {
+        padding: 25px 18px;
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .contact-item p {
+        font-size: 13px;
+    }
+}

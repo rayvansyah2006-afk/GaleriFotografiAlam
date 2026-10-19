@@ -1,48 +1,96 @@
-@extends('layout.app')     
-@section('title', 'Project')
+@extends('layout.app')
+
+@section('title', 'Galeri Fotografi Alam | Reyy Gallery')
+
 @section('content')
 
-<div class="container mt-5">
-    <div class="mb-4 text-center">
-        <h2 class="fw-bold">Portofolio Project</h2>
-        <p class="text-muted">Daftar project mahasiswa Universitas Pamulang</p>
+<link rel="stylesheet" href="{{ asset('css/gallery.css') }}">
+
+<section class="gallery-header">
+    <div class="container">
+        <span class="gallery-label">REYY GALLERY</span>
+
+        <h1>Galeri Fotografi Alam</h1>
+
+        <p>
+            Menjelajahi keindahan gunung, hutan, pantai,
+            dan pesona alam melalui setiap bidikan.
+        </p>
     </div>
-    <div class="row justify-content-center g-4">
-        @foreach ($projects as $project)
-        <div class="col-md-4">
-            <div class="card">
+</section>
 
-                <img src="{{ asset('images/' . $project->image) }}"
-                     alt="{{ $project->name }}"
-                     class="card-img-top"
-                     style="height: 200px; object-fit: cover;">
-                <div class="card-body">
-                    <span class="badge {{ $project->status === 'Selesai' ? 'bg-success' : 'bg-warning' }}">
-                        {{ $project->status }}
-                    </span>
-                    <h5 class="card-title">
-                        {{ $project->tittle }}
-                    </h5>
-                    <p class="card-text">
-                        {{ Str::limit($project->description, 50) }}
-                    </p>
-                </div>
-                <div class="card-footer bg-white border-0 pb-3">
+<section class="gallery-section">
+    <div class="container">
 
-                    <div class="mb-2">
-                        <small class="text-muted">
-                            Tech: {{ $project->teknologi }}
-                        </small>
-                    </div>
-
-                    <a href="{{ route('project.show', $project->id) }}"
-                       class="btn btn-primary w-100">
-                        Lihat Detail
-                    </a>
-                </div>
+        <div class="gallery-section-heading">
+            <div>
+                <span class="gallery-label">KOLEKSI KAMI</span>
+                <h2>Jelajahi Keindahan Alam</h2>
             </div>
         </div>
-        @endforeach
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+            @forelse ($projects as $project)
+                <div class="col">
+                    <article class="gallery-card h-100">
+
+                        <a
+                            href="{{ route('project.show', $project->id) }}"
+                            class="gallery-image-link"
+                        >
+                            <img
+                                src="{{ asset('images/' . $project->image) }}"
+                                alt="{{ $project->title }}"
+                                class="gallery-image"
+                            >
+                        </a>
+
+                        <div class="gallery-card-body">
+                            <span class="gallery-category">
+                                FOTOGRAFI ALAM
+                            </span>
+
+                            <h3>{{ $project->title }}</h3>
+
+                            <p>
+                                {{ $project->description }}
+                            </p>
+
+                            <a
+                                href="{{ route('project.show', $project->id) }}"
+                                class="gallery-detail-link"
+                            >
+                                Lihat Foto
+                                <span>&rarr;</span>
+                            </a>
+                        </div>
+
+                    </article>
+                </div>
+
+            @empty
+                <div class="col-12">
+                    <div class="gallery-empty">
+                        <h3>Belum Ada Koleksi Foto</h3>
+                        <p>
+                            Koleksi fotografi alam akan ditampilkan
+                            di halaman ini.
+                        </p>
+                    </div>
+                </div>
+            @endforelse
+             
+
+        </div>
+
+       @if ($projects->hasPages())
+    <div class="d-flex justify-content-center mt-4">
+        {{ $projects->links('pagination::bootstrap-5') }}
     </div>
-</div>
-@endsection
+@endif
+            
+            </div>
+        </section>
+        
+        @endsection

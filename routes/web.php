@@ -8,13 +8,14 @@ Route::get('/', function () {
     return view('page.home');
 });
 
-Route::get('/profile', [MahasiswaController::class, 'index']);
+Route::view('/about', 'page.about')->name('about');
 
 Route::get('/project', [ProjectController::class, 'index'])->name('project.index');
 Route::get('/project/{id}', [ProjectController::class, 'show'])->name('project.show');
 
-Route::get('/about', function () {
-    return view('page.about');
-});
+
+Route::get('/kontak', function () {
+    return view('page.kontak');
+})->name('kontak');
 
 Route::get('/mahasiswa', [MahasiswaController::class, 'index']);

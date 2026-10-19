@@ -1,0 +1,217 @@
+/* HEADER DETAIL FOTO */
+
+.detail-header {
+    padding: 45px 0 50px;
+    background: #e8e9dc;
+    text-align: left;
+}
+
+.detail-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.detail-back {
+    display: inline-block;
+    width: fit-content;
+    margin: 0;
+    color: #405b43;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.detail-back:hover {
+    color: #71835e;
+}
+
+.gallery-label {
+    display: block;
+    color: #71835e;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.detail-header h1 {
+    margin: 15px 0;
+    color: #263e30;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.detail-header p {
+    margin-bottom: 0;
+    color: #687067;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* =========================
+   AREA DETAIL FOTO
+========================= */
+
+.detail-section {
+    padding: 60px 0 75px;
+    background: #f7f5ef;
+}
+
+.detail-card {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    overflow: hidden;
+    background: #fffdf8;
+    border: 1px solid #e4e3d7;
+    transition: box-shadow 0.25s ease;
+}
+
+.detail-card:hover {
+    box-shadow: 0 12px 30px rgba(38, 62, 48, 0.08);
+}
+
+/* =========================
+   GAMBAR FOTO
+========================= */
+
+.detail-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    background: #eeece1;
+}
+
+.detail-photo img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+}
+
+/* =========================
+   KONTEN DETAIL
+========================= */
+
+.detail-content {
+    align-self: center;
+    padding: 45px;
+}
+
+.detail-category {
+    color: #71835e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.detail-content h2 {
+    margin: 15px 0 20px;
+    color: #263e30;
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.detail-divider {
+    width: 55px;
+    height: 2px;
+    margin-bottom: 25px;
+    background: #a9a477;
+}
+
+.detail-content h3 {
+    margin-bottom: 12px;
+    color: #263e30;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.detail-content p {
+    margin-bottom: 30px;
+    color: #687067;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* =========================
+   TOMBOL DETAIL
+========================= */
+
+.detail-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 13px 20px;
+    background: #263e30;
+    color: #fffdf5;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.25s ease,
+                transform 0.25s ease;
+}
+
+.detail-button:hover {
+    background: #405b43;
+    color: #fffdf5;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE TABLET & HP
+========================= */
+
+@media (max-width: 768px) {
+    .detail-header {
+        padding: 35px 0 40px;
+    }
+
+    .detail-section {
+        padding: 35px 0 50px;
+    }
+
+    .detail-card {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-photo {
+        min-height: 260px;
+    }
+
+    .detail-photo img {
+        height: 300px;
+    }
+
+    .detail-content {
+        padding: 28px;
+    }
+
+    .detail-content h2 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .detail-header h1 {
+        font-size: 30px;
+    }
+
+    .detail-content {
+        padding: 22px;
+    }
+
+    .detail-content h2 {
+        font-size: 23px;
+    }
+
+    .detail-button {
+        gap: 12px;
+        padding: 12px 16px;
+    }
+}

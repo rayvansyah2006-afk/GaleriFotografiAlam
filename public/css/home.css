@@ -1,0 +1,142 @@
+/* HOME - REYY GALLERY */
+
+.home-hero {
+    display: flex;
+    align-items: center;
+    min-height: 540px;
+    padding: 80px 0;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(20, 42, 30, 0.65),
+            rgba(20, 42, 30, 0.25)
+        ),
+        url('/images/forest.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fffdf5;
+}
+
+.hero-label {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #e1d6ad;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.hero-content h1 {
+    margin-bottom: 24px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.hero-content h1 span {
+    color: #d9d3a8;
+    font-style: italic;
+}
+
+.hero-content p {
+    max-width: 570px;
+    margin-bottom: 30px;
+    color: #f0f0e8;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    padding: 14px 22px;
+    background: #263e30;;
+    color: #f0f0e8;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.25s ease,
+                transform 0.25s ease;
+}
+
+.hero-button:hover {
+    background: #e1d6ad;
+    color: #263e30;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   HOME INTRODUCTION
+========================= */
+
+.home-intro {
+    padding: 75px 0;
+    background: #f7f5ef;
+}
+
+.home-intro .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.intro-label {
+    color: #71835e;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.intro-heading h2 {
+    margin-top: 18px;
+    margin-bottom: 0;
+    color: #263e30;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.intro-description p {
+    margin-bottom: 0;
+    color: #687067;
+    font-size: 15px;
+    line-height: 2;
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 768px) {
+    .home-hero {
+        min-height: 480px;
+        padding: 65px 0;
+        background-position: center;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .home-intro {
+        padding: 50px 0;
+    }
+
+    .home-intro .container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .intro-heading h2 {
+        font-size: 32px;
+    }
+}

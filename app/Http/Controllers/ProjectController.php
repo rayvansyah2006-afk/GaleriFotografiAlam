@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Project;
-use Illuminate\Http\Request;
+use App\Models\Photo;
 
 class ProjectController extends Controller
 {
-    //
     public function index()
-    {
-        $projects = Project::all();
+{
+    $projects = \App\Models\Photo::orderBy('id', 'asc')->paginate(6);
 
-        return view('page.project', compact('projects'));
-    }
+    return view('page.project', compact('projects'));
+}
 
     public function show($id)
     {
-        $project = Project::findOrFail($id);
+        $project = \App\Models\Photo::findOrFail($id);
 
         return view('page.project-detail', compact('project'));
     }

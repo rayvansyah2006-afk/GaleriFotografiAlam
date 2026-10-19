@@ -1,38 +1,50 @@
 @extends('layout.app')
 
-@section('title', 'Project Detail - ' . $project->title)
+@section('title', 'Detail Foto | Reyy Gallery')
 
 @section('content')
-<div class="container mt-5">
-    <div class="mb-4">
-        <a href="{{ route('project.index') }}" class="btn btn-secondary">
-            <i class="fas fa-arrow-left"></i> Kembali
-        </a>
-    </div>
-    <div class="row justify-content-center g-4">
-        <div class="col-md-7">
-            <div class="card h-100 shadow-sm border-0">
-                <img src="{{ asset('images/' . $project->image) }}" alt="{{ $project->title }}"
-                    class="img-fluid h-100 w-100" style="min-height: 300px; object-fit: cover;">
+<link rel="stylesheet" href="{{ asset('css/gallery-detail.css') }}">
 
+<section class="detail-header">
+    <div class="container">
+       <div class="detail-top">
+    <a href="/project" class="detail-back">
+        &larr; Kembali ke Galeri
+    </a>
+
+    <span class="gallery-label">REYY GALLERY</span>
+</div>
+        <h1>{{ $project->title }}</h1>
+        <p>Setiap foto menyimpan cerita tentang keindahan alam.</p>
+    </div>
+</section>
+
+<section class="detail-section">
+    <div class="container">
+        <div class="detail-card">
+            <div class="detail-photo">
+                <img
+                    src="{{ asset('images/' . $project->image) }}"
+                    alt="{{ $project->title }}"
+                >
             </div>
-        </div>
-        <div class="col-md-5">
-            <div class="card h-100 ">
-                <h5 class="card-title">Detail Project</h5>
-                <div class="card-body">
-                    <span
-                        class="badge {{ $project->status === 'Selesai' ? 'bg-success' : 'bg-warning' }}">{{ $project->status }}</span>
-                    <h5 class="card-title">{{ $project->title }}</h5>
-                    <p class="card-text">{{ $project->description }}</p>
-                </div>
-                <div class="card-footer bg-white border-0 pb-3">
-                    <div class="mb-2">
-                        <small class="text-muted">Tech: {{ $project->teknologi }}</small>
-                    </div>
-                </div>
+
+            <div class="detail-content">
+                <span class="detail-category">FOTOGRAFI ALAM</span>
+
+                <h2>{{ $project->title }}</h2>
+
+                <div class="detail-divider"></div>
+
+                <h3>Tentang Foto</h3>
+                <p>{{ $project->description }}</p>
+
+                <a href="/project" class="detail-button">
+                    Jelajahi Foto Lain
+                    <span>&rarr;</span>
+                </a>
             </div>
         </div>
     </div>
-</div>
+</section>
 @endsection
